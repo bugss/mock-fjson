@@ -1,0 +1,35 @@
+{
+  "name": "mock-fjson",
+  "version": "1.0.0",
+  "description": "mock function json",
+  "main": "index.js",
+  "scripts": {
+    "test-local": "mocha -- $NODE_DEBUG_OPTION test/**/*.test.js",
+    "test": "nyc --reporter=html --reporter=text mocha",
+    "coverage": "nyc report --reporter=text-lcov|coveralls "
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bugss/mock-fjson.git"
+  },
+  "keywords": [
+    "mock",
+    "json",
+    "function",
+    "stringify"
+  ],
+  "author": "bugss",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/bugss/mock-fjson/issues"
+  },
+  "homepage": "https://github.com/bugss/mock-fjson#readme",
+  "dependencies": {
+    "co": "^4.6.0"
+  },
+  "devDependencies": {
+    "coveralls": "^2.13.1",
+    "mocha": "^3.4.1",
+    "nyc": "^10.3.2"
+  }
+}
