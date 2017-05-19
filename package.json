@@ -1,6 +1,6 @@
 {
   "name": "mock-fjson",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "mock function json",
   "main": "index.js",
   "scripts": {

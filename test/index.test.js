@@ -239,6 +239,7 @@ describe('test/index.test.js', function () {
       }
     }
     fjson.stringify(testObject).then(function (jsonStr) {
+      console.info(jsonStr)
       assert(fjson.hasFunction(testObject) === true)
       assert(!jsonStr.includes('"f1"'))
       assert(!jsonStr.includes('"f2"'))
