@@ -90,18 +90,27 @@ const parsers = {
   }
 }
 
+function isFunctionConfig (value) {
+  if (value && value.hasOwnProperty(keyword)) {
+    return true
+  } else {
+    return false
+  }
+}
+
 function getFuntionConfig (obj) {
   let rs = []
   JSON.stringify(obj, function (key, value) {
-    if (value && value.hasOwnProperty(keyword)) {
+    if (isFunctionConfig(value)) {
       rs.push({
         target: this,
         key,
         config: value
       })
       return
+    } else {
+      return value
     }
-    return value
   })
   return rs
 }
@@ -162,7 +171,13 @@ module.exports = {
       obj[hasFunctionKey] = true
       yield exec(rs)
     }
-    json = JSON.stringify(obj)
+    json = JSON.stringify(obj, function (key, value) {
+      if (isFunctionConfig(value)) {
+        return
+      } else {
+        return value
+      }
+    })
     // clean up
     for (let item of rs) {
       delete item.target[getFunctionFieldKey(item.key)]

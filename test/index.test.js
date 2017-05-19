@@ -240,6 +240,11 @@ describe('test/index.test.js', function () {
     }
     fjson.stringify(testObject).then(function (jsonStr) {
       assert(fjson.hasFunction(testObject) === true)
+      assert(!jsonStr.includes('"f1"'))
+      assert(!jsonStr.includes('"f2"'))
+      assert(!jsonStr.includes('"f3"'))
+      assert(!jsonStr.includes('"f4"'))
+      assert(!jsonStr.includes('"f5"'))
       assert(jsonStr.includes('__$f1'))
       assert(jsonStr.includes('__$f2'))
       assert(jsonStr.includes('__$f3'))
