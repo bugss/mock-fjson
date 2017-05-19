@@ -6,7 +6,7 @@
   "scripts": {
     "test-local": "mocha -- $NODE_DEBUG_OPTION test/**/*.test.js",
     "test": "nyc --reporter=html --reporter=text mocha",
-    "coverage": "nyc report --reporter=text-lcov|coveralls"
+    "ci": "nyc report --reporter=text-lcov > coverage.lcov && codecov"
   },
   "repository": {
     "type": "git",

@@ -6,7 +6,6 @@ install:
   - npm i npminstall && npminstall
 script:
   - npm run test
-after_script:
-  - npminstall codecov && codecov
 after_success:
-  - npm run coverage
+  - npminstall codecov && npm run ci
+
